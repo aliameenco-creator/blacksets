@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Home | Black Sets",
+    "desc": "Bespoke film and television set construction, carpentry fabrication, 3D laser scanning, and virtual production environments at Black Hangar Studios."
+  },
+  "gallery": {
+    "title": "Gallery | Black Sets",
+    "desc": "Explore our portfolio of behind-the-scenes film set builds, scenic carpentry, and camera-ready environments."
+  },
+  "3d-scans": {
+    "title": "3D Scans | Black Sets",
+    "desc": "Virtual Sets and high-resolution 3D environment scans for film and television VFX, LED volumes, and pre-visualisation."
+  },
+  "projects": {
+    "title": "Projects | Black Sets",
+    "desc": "Film and television productions featuring sets and environments built by Black Sets, including Jeepers Creepers: Reborn, Willy's Wonderland, 97 Minutes, and Salvage Marines."
+  },
+  "blog": {
+    "title": "News | Black Sets",
+    "desc": "Latest news, press announcements, and studio updates from Black Sets."
+  },
+  "contact": {
+    "title": "Contact | Black Sets",
+    "desc": "Contact Black Sets at Black Hangar Studios, Lasham Airfield, Alton. Enquire about set design, fabrication, and 3D scanning."
+  },
+  "about-7": {
+    "title": "FAQ | Black Sets",
+    "desc": "Frequently asked questions about Black Sets construction, stages, and 3D scanning services."
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy | Black Sets",
+    "desc": "Privacy Policy for Black Sets and Black Hangar Studios."
+  },
+  "terms-conditions": {
+    "title": "Terms & Conditions | Black Sets",
+    "desc": "Terms and conditions for Black Sets studio services."
+  }
+}

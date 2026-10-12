@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "name": "Ink", "slug": "ink", "color": "#0a0a0a" },
+        { "name": "Coal", "slug": "coal", "color": "#121212" },
+        { "name": "Paper", "slug": "paper", "color": "#f5f5f5" },
+        { "name": "Gold", "slug": "gold", "color": "#c5a059" },
+        { "name": "Gold Light", "slug": "gold-light", "color": "#e0c285" },
+        { "name": "Muted", "slug": "muted", "color": "#9ca3af" },
+        { "name": "Border", "slug": "border", "color": "rgba(255,255,255,0.12)" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Cormorant Garamond, Cormorant, Garamond, serif",
+          "name": "Cormorant Garamond",
+          "slug": "display"
+        },
+        {
+          "fontFamily": "Manrope, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "Manrope",
+          "slug": "body"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1440px"
+    }
+  }
+}
+

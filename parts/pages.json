@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "home",
+    "title": "Home",
+    "front": true,
+    "template": "",
+    "seo_title": "Home | Black Sets",
+    "menu": true,
+    "order": 1
+  },
+  {
+    "slug": "gallery",
+    "title": "Gallery",
+    "front": false,
+    "template": "",
+    "seo_title": "Gallery | Black Sets",
+    "menu": true,
+    "order": 2
+  },
+  {
+    "slug": "3d-scans",
+    "title": "3D Scans",
+    "front": false,
+    "template": "",
+    "seo_title": "3D Scans | Black Sets",
+    "menu": true,
+    "order": 3
+  },
+  {
+    "slug": "projects",
+    "title": "Projects",
+    "front": false,
+    "template": "",
+    "seo_title": "Projects | Black Sets",
+    "menu": true,
+    "order": 4
+  },
+  {
+    "slug": "blog",
+    "title": "News",
+    "front": false,
+    "template": "",
+    "seo_title": "News | Black Sets",
+    "menu": true,
+    "order": 5
+  },
+  {
+    "slug": "contact",
+    "title": "Contact",
+    "front": false,
+    "template": "",
+    "seo_title": "Contact | Black Sets",
+    "menu": true,
+    "order": 6
+  },
+  {
+    "slug": "about-7",
+    "title": "FAQ",
+    "front": false,
+    "template": "",
+    "seo_title": "FAQ | Black Sets",
+    "menu": false,
+    "order": 7
+  },
+  {
+    "slug": "privacy-policy",
+    "title": "Privacy Policy",
+    "front": false,
+    "privacy": true,
+    "template": "",
+    "seo_title": "Privacy Policy | Black Sets",
+    "menu": false,
+    "order": 8
+  },
+  {
+    "slug": "terms-conditions",
+    "title": "Terms & Conditions",
+    "front": false,
+    "template": "",
+    "seo_title": "Terms & Conditions | Black Sets",
+    "menu": false,
+    "order": 9
+  }
+]

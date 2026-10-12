@@ -1,0 +1,37 @@
+{
+  "contact": {
+    "title": "Contact",
+    "fields": [
+      {
+        "key": "name",
+        "label": "Name",
+        "type": "text",
+        "required": true,
+        "max": 120
+      },
+      {
+        "key": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true,
+        "max": 160
+      },
+      {
+        "key": "subject",
+        "label": "Subject / Production Title",
+        "type": "text",
+        "required": false,
+        "max": 200
+      },
+      {
+        "key": "message",
+        "label": "Message",
+        "type": "textarea",
+        "required": true,
+        "max": 4000
+      }
+    ],
+    "submit": "Send Message",
+    "thanks": "Thank you! Your message has been received and our team will get in touch shortly."
+  }
+}
