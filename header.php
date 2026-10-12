@@ -13,10 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <body <?php body_class( bsets_body_class() ); ?>>
 <?php wp_body_open(); ?>
 <a class="skip" href="#content">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header" id="header">
   <div class="header-inner">
     <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" aria-label="Black Sets Home">
-      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/bsets-logo.png' ) ); ?>" alt="Black Sets" class="brand-logo" width="160" height="48">
+      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/bsets-logo-light.png' ) ); ?>" alt="Black Sets" class="brand-logo" width="<?php echo (int) bsets_logo_size()[0]; ?>" height="<?php echo (int) bsets_logo_size()[1]; ?>">
     </a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
       <span class="menu-label">Menu</span>

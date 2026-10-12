@@ -1,6 +1,6 @@
 <?php
 /**
- * Black Sets Theme Footer.
+ * Black Sets Theme Footer (the original footer's wording: Contact US, Join Our mailing list).
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
@@ -8,10 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <footer class="site-footer" id="footer">
   <div class="footer-inner">
     <div class="footer-col footer-brand">
-      <a class="footer-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/bsets-logo.png' ) ); ?>" alt="Black Sets" class="footer-logo" width="150" height="45">
+      <a class="footer-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Black Sets home">
+        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/bsets-logo-light.png' ) ); ?>" alt="Black Sets" class="footer-logo" width="<?php echo (int) bsets_logo_size()[0]; ?>" height="<?php echo (int) bsets_logo_size()[1]; ?>" loading="lazy">
       </a>
-      <p class="footer-desc">Bespoke film and television set construction, carpentry fabrication, 3D laser scanning, and virtual production environments at Black Hangar Studios.</p>
       <ul class="bsets-socials footer-socials">
         <li><a href="https://www.instagram.com/blacksetsfilm" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1"/></svg></a></li>
         <li><a href="https://www.facebook.com/BlackSetsFilm" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21z"/></svg></a></li>
@@ -20,42 +19,39 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
       </ul>
     </div>
 
-    <div class="footer-col footer-nav">
-      <h4 class="footer-heading">Navigation</h4>
+    <nav class="footer-col footer-nav" aria-label="Footer">
       <ul class="footer-links">
         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/gallery' ) ); ?>">Gallery</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/3d-scans' ) ); ?>">3D Scans</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/projects' ) ); ?>">Projects</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">News</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>">Gallery</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/3d-scans/' ) ); ?>">3D Scans</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/projects/' ) ); ?>">Projects</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">News</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a></li>
       </ul>
-    </div>
+    </nav>
 
     <div class="footer-col footer-contact">
-      <h4 class="footer-heading">Studio &amp; Workshop</h4>
-      <p>Black Hangar Studios<br>Lasham Airfield, Alton<br>GU34 5SR, United Kingdom</p>
+      <h2 class="footer-heading">Contact US</h2>
+      <p>Black Hangar Studios, Lasham Airfield,<br>Alton, GU34 5SR</p>
       <p class="footer-contact-links">
         <a href="tel:+441256384235">+44 (0) 1256 384235</a><br>
-        <a href="mailto:info@blacklab.com">info@blacklab.com</a><br>
-        <a href="mailto:blackvfx@blackhangarstudios.com">blackvfx@blackhangarstudios.com</a>
+        <a href="mailto:info@blacklab.com">info@blacklab.com</a>
       </p>
     </div>
 
     <div class="footer-col footer-subscribe">
-      <h4 class="footer-heading">Join Our Mailing List</h4>
-      <p>Subscribe for updates on our latest studio builds and virtual production work.</p>
+      <h2 class="footer-heading">Join Our mailing list</h2>
       <?php echo bsets_render_form( 'subscribe' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
     </div>
   </div>
 
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
-      <p class="copyright">Copyright &copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> Black Sets. All rights reserved.</p>
+      <p class="copyright">Copyright &copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> Black Sets</p>
       <ul class="footer-legal">
-        <li><a href="<?php echo esc_url( home_url( '/privacy-policy' ) ); ?>">Privacy Policy</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/about-7' ) ); ?>">FAQ</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/terms-conditions' ) ); ?>">Terms &amp; Conditions</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/about-7/' ) ); ?>">FAQ</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/terms-conditions/' ) ); ?>">Terms &amp; Conditions</a></li>
       </ul>
     </div>
   </div>
@@ -63,4 +59,3 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <?php wp_footer(); ?>
 </body>
 </html>
-

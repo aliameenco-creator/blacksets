@@ -9,14 +9,14 @@
 .editor-styles-wrapper h2,
 .editor-styles-wrapper h3,
 .editor-styles-wrapper h4 {
-  font-family: 'Cormorant Garamond', 'Cormorant', Garamond, serif !important;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   color: #ffffff !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
 }
 
 .editor-styles-wrapper .eyebrow {
   font-family: 'Manrope', sans-serif !important;
-  color: #dfc588 !important;
+  color: #bfae8a !important;
   letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
   font-size: 11px !important;
@@ -33,6 +33,16 @@
 }
 
 .editor-styles-wrapper a {
-  color: #dfc588 !important;
+  color: #bfae8a !important;
 }
 
+
+/* The light "Explore Black Sets" band */
+.editor-styles-wrapper .is-light {
+  background: #f5f4f1 !important;
+  color: #2a2a2a !important;
+}
+.editor-styles-wrapper .is-light h2,
+.editor-styles-wrapper .is-light h3 {
+  color: #0a0a0a !important;
+}

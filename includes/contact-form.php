@@ -51,14 +51,9 @@ add_action( 'add_meta_boxes_bsets_enquiry', function () {
         $forms = bsets_form_definitions();
         $form = $forms[ $form_id ] ?? array();
         echo '<table class="widefat striped"><tbody><tr><th style="width:180px">Form</th><td>' . esc_html( $form['title'] ?? ucfirst( $form_id ) ) . '</td></tr>';
-        if ( ! empty( $form['fields'] ) ) {
-            foreach ( $form['fields'] as $field ) {
-                echo '<tr><th>' . esc_html( $field['label'] ) . '</th><td style="white-space:pre-wrap">' . esc_html( $values[ $field['key'] ] ?? '' ) . '</td></tr>';
-            }
-        } else {
-            foreach ( $values as $k => $v ) {
-                echo '<tr><th>' . esc_html( ucfirst( $k ) ) . '</th><td style="white-space:pre-wrap">' . esc_html( $v ) . '</td></tr>';
-            }
+        $labels = array_column( $form['fields'] ?? array(), 'label', 'key' );
+        foreach ( $values as $k => $v ) { // Every stored value, including fields from earlier theme versions.
+            echo '<tr><th>' . esc_html( $labels[ $k ] ?? ucwords( str_replace( '_', ' ', $k ) ) ) . '</th><td style="white-space:pre-wrap">' . esc_html( $v ) . '</td></tr>';
         }
         $mail = get_post_meta( $post->ID, '_bsets_mail', true );
         echo '<tr><th>Email notification</th><td>' . esc_html( $mail ? $mail : 'none' ) . '</td></tr><tr><th>Page URL</th><td>' . esc_html( get_post_meta( $post->ID, '_bsets_page', true ) ) . '</td></tr></tbody></table>';
@@ -78,16 +73,18 @@ add_action( 'manage_bsets_enquiry_posts_custom_column', function ( $column, $id 
 
 function bsets_render_form( $form_id = 'contact' ) {
     if ( 'subscribe' === $form_id ) {
+        $sub = bsets_form_definitions()['subscribe'] ?? array();
+        $placeholder = $sub['fields'][0]['placeholder'] ?? 'Enter your email here*';
         $action = esc_url( admin_url( 'admin-post.php' ) );
-        return '<form class="bsets-subscribe-form" action="' . $action . '" method="post">' .
+        return '<form class="bsets-form bsets-subscribe-form" action="' . $action . '" method="post">' .
                '<input type="hidden" name="action" value="bsets_form_submit">' .
                '<input type="hidden" name="bsets_form" value="subscribe">' .
                '<input type="hidden" name="bsets_time" value="' . time() . '">' .
                '<div style="display:none!important"><input type="text" name="bsets_website" autocomplete="off" tabindex="-1"></div>' .
                '<div class="bsets-sub-wrap">' .
-               '<input type="email" name="bsets_email" placeholder="Your email address" required>' .
-               '<button type="submit" class="bsets-btn is-style-gold">Subscribe</button>' .
-               '</div></form>';
+               '<input type="email" name="bsets_email" aria-label="Email" placeholder="' . esc_attr( $placeholder ) . '" required>' .
+               '<button type="submit" class="bsets-btn">' . esc_html( $sub['submit'] ?? 'Subscribe Now' ) . '</button>' .
+               '</div><div class="bsets-form-status" aria-live="polite"></div></form>';
     }
 
     $forms = bsets_form_definitions();
@@ -106,7 +103,7 @@ function bsets_render_form( $form_id = 'contact' ) {
         $label = esc_html( $field['label'] );
         $req = ! empty( $field['required'] );
         $type = $field['type'] ?? 'text';
-        $full = in_array( $key, array( 'message', 'subject' ), true ) ? ' bsets-col-full' : '';
+        $full = in_array( $key, array( 'message', 'email' ), true ) ? ' bsets-col-full' : '';
 
         $out .= '<div class="bsets-form-field' . $full . '">';
         $out .= '<label for="bsets_' . $key . '">' . $label . ( $req ? ' <span class="required">*</span>' : '' ) . '</label>';
@@ -119,7 +116,7 @@ function bsets_render_form( $form_id = 'contact' ) {
     }
 
     $out .= '</div>';
-    $out .= '<div class="bsets-form-actions"><button type="submit" class="bsets-btn is-style-gold">' . esc_html( $form['submit'] ?? 'Send Message' ) . '</button></div>';
+    $out .= '<div class="bsets-form-actions"><button type="submit" class="bsets-btn">' . esc_html( $form['submit'] ?? 'Send' ) . '</button></div>';
     $out .= '</form>';
     return $out;
 }
@@ -162,7 +159,7 @@ function bsets_handle_form() {
                 $errors[ $f['key'] ] = 'Please enter a valid email address.';
             }
         }
-        $name = $values['name'] ?? 'Visitor';
+        $name = trim( ( $values['first_name'] ?? '' ) . ' ' . ( $values['last_name'] ?? '' ) ) ?: ( $values['name'] ?? 'Visitor' );
         $email = $values['email'] ?? '';
         $title = $email ? "{$name} <{$email}>" : $name;
     }
@@ -196,7 +193,7 @@ function bsets_handle_form() {
     $sent = wp_mail( $to, $subject, $body );
     update_post_meta( $post_id, '_bsets_mail', $sent ? 'Sent to ' . $to : 'Failed' );
 
-    $thanks = 'Thank you! Your message has been received and our team will get in touch shortly.';
+    $thanks = bsets_form_definitions()[ $form_id ]['thanks'] ?? 'Thanks for submitting!';
     if ( $is_ajax ) {
         wp_send_json( array( 'ok' => true, 'message' => $thanks ) );
     }

@@ -8,8 +8,8 @@
         { "name": "Ink", "slug": "ink", "color": "#0a0a0a" },
         { "name": "Coal", "slug": "coal", "color": "#121212" },
         { "name": "Paper", "slug": "paper", "color": "#f5f5f5" },
-        { "name": "Gold", "slug": "gold", "color": "#c5a059" },
-        { "name": "Gold Light", "slug": "gold-light", "color": "#e0c285" },
+        { "name": "Bronze", "slug": "gold", "color": "#64563d" },
+        { "name": "Bronze Light", "slug": "gold-light", "color": "#bfae8a" },
         { "name": "Muted", "slug": "muted", "color": "#9ca3af" },
         { "name": "Border", "slug": "border", "color": "rgba(255,255,255,0.12)" }
       ]

@@ -1,373 +1,387 @@
 [
   {
-    "key": "81fcfa7a06c61678",
-    "file": "assets/img/81fcfa7a06c61678-400.webp",
+    "key": "7d98d9143941760d",
+    "file": "assets/img/7d98d9143941760d-400.webp",
     "name": "client-logo-1",
-    "alt": "Studio Partner 1",
-    "title": "Studio Partner 1"
+    "alt": "Client logo 1",
+    "title": "Client logo 1"
   },
   {
-    "key": "090f37d22bc4bfd5",
-    "file": "assets/img/090f37d22bc4bfd5-400.webp",
+    "key": "fd3e8e6840bbec0b",
+    "file": "assets/img/fd3e8e6840bbec0b-400.webp",
     "name": "client-logo-2",
-    "alt": "Studio Partner 2",
-    "title": "Studio Partner 2"
+    "alt": "Client logo 2",
+    "title": "Client logo 2"
   },
   {
-    "key": "75dcfb50947d5f06",
-    "file": "assets/img/75dcfb50947d5f06-400.webp",
+    "key": "9188dc9f49849776",
+    "file": "assets/img/9188dc9f49849776-400.webp",
     "name": "client-logo-3",
-    "alt": "Studio Partner 3",
-    "title": "Studio Partner 3"
+    "alt": "Client logo 3",
+    "title": "Client logo 3"
   },
   {
-    "key": "cbcde8e473531317",
-    "file": "assets/img/cbcde8e473531317-400.webp",
+    "key": "a1ecbed846128d6b",
+    "file": "assets/img/a1ecbed846128d6b-400.webp",
     "name": "client-logo-4",
-    "alt": "Studio Partner 4",
-    "title": "Studio Partner 4"
+    "alt": "Client logo 4",
+    "title": "Client logo 4"
   },
   {
-    "key": "d524336ff90b628b",
-    "file": "assets/img/d524336ff90b628b-400.webp",
+    "key": "53d33f65dd2faba3",
+    "file": "assets/img/53d33f65dd2faba3-400.webp",
     "name": "client-logo-5",
-    "alt": "Studio Partner 5",
-    "title": "Studio Partner 5"
+    "alt": "Client logo 5",
+    "title": "Client logo 5"
   },
   {
     "key": "6b86f0ac83233935",
     "file": "assets/img/6b86f0ac83233935-1000.webp",
     "name": "explore-3d-scans-teaser",
-    "alt": "3D Virtual Objects and Set Scans",
-    "title": "3D Virtual Objects and Set Scans"
+    "alt": "3D scan render",
+    "title": "3D scan render"
   },
   {
     "key": "e0ced15edf2b7860",
     "file": "assets/img/e0ced15edf2b7860-1000.webp",
     "name": "explore-gallery-teaser",
-    "alt": "Film set construction BTS",
-    "title": "Film set construction BTS"
+    "alt": "Film set construction behind the scenes",
+    "title": "Film set construction behind the scenes"
   },
   {
     "key": "93ba4ad40d0081fc",
     "file": "assets/img/93ba4ad40d0081fc-1626.webp",
     "name": "gallery-bts-01",
-    "alt": "Black Sets production photo 1",
-    "title": "Black Sets production photo 1"
+    "alt": "Black Sets behind the scenes photo 1",
+    "title": "Black Sets behind the scenes photo 1"
   },
   {
     "key": "2548f6e5c9ca0669",
     "file": "assets/img/2548f6e5c9ca0669-1603.webp",
     "name": "gallery-bts-02",
-    "alt": "Black Sets production photo 2",
-    "title": "Black Sets production photo 2"
+    "alt": "Black Sets behind the scenes photo 2",
+    "title": "Black Sets behind the scenes photo 2"
   },
   {
     "key": "6f141fa55a4973b3",
     "file": "assets/img/6f141fa55a4973b3-1617.webp",
     "name": "gallery-bts-03",
-    "alt": "Black Sets production photo 3",
-    "title": "Black Sets production photo 3"
+    "alt": "Black Sets behind the scenes photo 3",
+    "title": "Black Sets behind the scenes photo 3"
   },
   {
     "key": "159b396c23481f16",
     "file": "assets/img/159b396c23481f16-1614.webp",
     "name": "gallery-bts-04",
-    "alt": "Black Sets production photo 4",
-    "title": "Black Sets production photo 4"
+    "alt": "Black Sets behind the scenes photo 4",
+    "title": "Black Sets behind the scenes photo 4"
   },
   {
     "key": "06d9ccca5e530c9a",
     "file": "assets/img/06d9ccca5e530c9a-1617.webp",
     "name": "gallery-bts-05",
-    "alt": "Black Sets production photo 5",
-    "title": "Black Sets production photo 5"
+    "alt": "Black Sets behind the scenes photo 5",
+    "title": "Black Sets behind the scenes photo 5"
   },
   {
     "key": "a4fb7c8a6f2f5c95",
     "file": "assets/img/a4fb7c8a6f2f5c95-1604.webp",
     "name": "gallery-bts-06",
-    "alt": "Black Sets production photo 6",
-    "title": "Black Sets production photo 6"
+    "alt": "Black Sets behind the scenes photo 6",
+    "title": "Black Sets behind the scenes photo 6"
   },
   {
     "key": "898c68535ffcdf1b",
     "file": "assets/img/898c68535ffcdf1b-1622.webp",
     "name": "gallery-bts-07",
-    "alt": "Black Sets production photo 7",
-    "title": "Black Sets production photo 7"
+    "alt": "Black Sets behind the scenes photo 7",
+    "title": "Black Sets behind the scenes photo 7"
   },
   {
     "key": "d02a91eacb587a89",
     "file": "assets/img/d02a91eacb587a89-1553.webp",
     "name": "gallery-bts-08",
-    "alt": "Black Sets production photo 8",
-    "title": "Black Sets production photo 8"
+    "alt": "Black Sets behind the scenes photo 8",
+    "title": "Black Sets behind the scenes photo 8"
   },
   {
     "key": "1a9e36158c5c2c64",
     "file": "assets/img/1a9e36158c5c2c64-1554.webp",
     "name": "gallery-bts-09",
-    "alt": "Black Sets production photo 9",
-    "title": "Black Sets production photo 9"
+    "alt": "Black Sets behind the scenes photo 9",
+    "title": "Black Sets behind the scenes photo 9"
   },
   {
     "key": "b9d137f5a02ff632",
     "file": "assets/img/b9d137f5a02ff632-1625.webp",
     "name": "gallery-bts-10",
-    "alt": "Black Sets production photo 10",
-    "title": "Black Sets production photo 10"
+    "alt": "Black Sets behind the scenes photo 10",
+    "title": "Black Sets behind the scenes photo 10"
   },
   {
     "key": "64d0d744737a7c1f",
     "file": "assets/img/64d0d744737a7c1f-1604.webp",
     "name": "gallery-bts-11",
-    "alt": "Black Sets production photo 11",
-    "title": "Black Sets production photo 11"
+    "alt": "Black Sets behind the scenes photo 11",
+    "title": "Black Sets behind the scenes photo 11"
   },
   {
     "key": "d47a0d4f1da75585",
     "file": "assets/img/d47a0d4f1da75585-1590.webp",
     "name": "gallery-bts-12",
-    "alt": "Black Sets production photo 12",
-    "title": "Black Sets production photo 12"
+    "alt": "Black Sets behind the scenes photo 12",
+    "title": "Black Sets behind the scenes photo 12"
   },
   {
     "key": "9be7c5d999261fd4",
     "file": "assets/img/9be7c5d999261fd4-1602.webp",
     "name": "gallery-bts-13",
-    "alt": "Black Sets production photo 13",
-    "title": "Black Sets production photo 13"
+    "alt": "Black Sets behind the scenes photo 13",
+    "title": "Black Sets behind the scenes photo 13"
   },
   {
     "key": "7f3a123240bed12b",
     "file": "assets/img/7f3a123240bed12b-1920.webp",
     "name": "gallery-bts-14",
-    "alt": "Black Sets production photo 14",
-    "title": "Black Sets production photo 14"
+    "alt": "Black Sets behind the scenes photo 14",
+    "title": "Black Sets behind the scenes photo 14"
   },
   {
     "key": "5c5a9623971ccb18",
     "file": "assets/img/5c5a9623971ccb18-1920.webp",
     "name": "gallery-bts-15",
-    "alt": "Black Sets production photo 15",
-    "title": "Black Sets production photo 15"
+    "alt": "Black Sets behind the scenes photo 15",
+    "title": "Black Sets behind the scenes photo 15"
   },
   {
     "key": "f528e2ac5501413d",
     "file": "assets/img/f528e2ac5501413d-1920.webp",
     "name": "gallery-bts-16",
-    "alt": "Black Sets production photo 16",
-    "title": "Black Sets production photo 16"
+    "alt": "Black Sets behind the scenes photo 16",
+    "title": "Black Sets behind the scenes photo 16"
   },
   {
     "key": "b4b60f266c644531",
     "file": "assets/img/b4b60f266c644531-1920.webp",
     "name": "gallery-bts-17",
-    "alt": "Black Sets production photo 17",
-    "title": "Black Sets production photo 17"
+    "alt": "Black Sets behind the scenes photo 17",
+    "title": "Black Sets behind the scenes photo 17"
   },
   {
     "key": "eed2af92dff2c974",
     "file": "assets/img/eed2af92dff2c974-1920.webp",
     "name": "gallery-bts-18",
-    "alt": "Black Sets production photo 18",
-    "title": "Black Sets production photo 18"
+    "alt": "Black Sets behind the scenes photo 18",
+    "title": "Black Sets behind the scenes photo 18"
   },
   {
     "key": "af13dcb6563848b3",
     "file": "assets/img/af13dcb6563848b3-1920.webp",
     "name": "gallery-bts-19",
-    "alt": "Black Sets production photo 19",
-    "title": "Black Sets production photo 19"
+    "alt": "Black Sets behind the scenes photo 19",
+    "title": "Black Sets behind the scenes photo 19"
   },
   {
     "key": "541b7e216d0946d3",
     "file": "assets/img/541b7e216d0946d3-1920.webp",
     "name": "gallery-bts-20",
-    "alt": "Black Sets production photo 20",
-    "title": "Black Sets production photo 20"
+    "alt": "Black Sets behind the scenes photo 20",
+    "title": "Black Sets behind the scenes photo 20"
   },
   {
     "key": "f3144d80841f69b2",
     "file": "assets/img/f3144d80841f69b2-1920.webp",
     "name": "gallery-bts-21",
-    "alt": "Black Sets production photo 21",
-    "title": "Black Sets production photo 21"
+    "alt": "Black Sets behind the scenes photo 21",
+    "title": "Black Sets behind the scenes photo 21"
   },
   {
     "key": "9211b2e6afc3aa17",
     "file": "assets/img/9211b2e6afc3aa17-1920.webp",
     "name": "gallery-bts-22",
-    "alt": "Black Sets production photo 22",
-    "title": "Black Sets production photo 22"
+    "alt": "Black Sets behind the scenes photo 22",
+    "title": "Black Sets behind the scenes photo 22"
   },
   {
     "key": "796c2523c23427d4",
     "file": "assets/img/796c2523c23427d4-1920.webp",
     "name": "gallery-bts-23",
-    "alt": "Black Sets production photo 23",
-    "title": "Black Sets production photo 23"
+    "alt": "Black Sets behind the scenes photo 23",
+    "title": "Black Sets behind the scenes photo 23"
   },
   {
     "key": "ac3710dc742337df",
     "file": "assets/img/ac3710dc742337df-1920.webp",
     "name": "gallery-bts-24",
-    "alt": "Black Sets production photo 24",
-    "title": "Black Sets production photo 24"
+    "alt": "Black Sets behind the scenes photo 24",
+    "title": "Black Sets behind the scenes photo 24"
   },
   {
     "key": "c93ed48a3e51dbf6",
     "file": "assets/img/c93ed48a3e51dbf6-1920.webp",
     "name": "gallery-bts-25",
-    "alt": "Black Sets production photo 25",
-    "title": "Black Sets production photo 25"
+    "alt": "Black Sets behind the scenes photo 25",
+    "title": "Black Sets behind the scenes photo 25"
   },
   {
     "key": "c9975aefffc67018",
     "file": "assets/img/c9975aefffc67018-1094.webp",
     "name": "gallery-bts-26",
-    "alt": "Black Sets production photo 26",
-    "title": "Black Sets production photo 26"
+    "alt": "Black Sets behind the scenes photo 26",
+    "title": "Black Sets behind the scenes photo 26"
   },
   {
     "key": "b012a67ffd481cc9",
     "file": "assets/img/b012a67ffd481cc9-1602.webp",
     "name": "gallery-bts-27",
-    "alt": "Black Sets production photo 27",
-    "title": "Black Sets production photo 27"
+    "alt": "Black Sets behind the scenes photo 27",
+    "title": "Black Sets behind the scenes photo 27"
   },
   {
     "key": "8b1caefb92aabd7d",
     "file": "assets/img/8b1caefb92aabd7d-1613.webp",
     "name": "gallery-bts-28",
-    "alt": "Black Sets production photo 28",
-    "title": "Black Sets production photo 28"
+    "alt": "Black Sets behind the scenes photo 28",
+    "title": "Black Sets behind the scenes photo 28"
   },
   {
     "key": "e15bb7336f657166",
     "file": "assets/img/e15bb7336f657166-1614.webp",
     "name": "gallery-bts-29",
-    "alt": "Black Sets production photo 29",
-    "title": "Black Sets production photo 29"
+    "alt": "Black Sets behind the scenes photo 29",
+    "title": "Black Sets behind the scenes photo 29"
   },
   {
     "key": "66f14eb64b100d7a",
     "file": "assets/img/66f14eb64b100d7a-1351.webp",
     "name": "gallery-bts-30",
-    "alt": "Black Sets production photo 30",
-    "title": "Black Sets production photo 30"
+    "alt": "Black Sets behind the scenes photo 30",
+    "title": "Black Sets behind the scenes photo 30"
   },
   {
     "key": "af5b350657a42867",
     "file": "assets/img/af5b350657a42867-1611.webp",
     "name": "gallery-bts-31",
-    "alt": "Black Sets production photo 31",
-    "title": "Black Sets production photo 31"
+    "alt": "Black Sets behind the scenes photo 31",
+    "title": "Black Sets behind the scenes photo 31"
   },
   {
     "key": "5ebd13b2b9a6c83d",
     "file": "assets/img/5ebd13b2b9a6c83d-1561.webp",
     "name": "gallery-bts-32",
-    "alt": "Black Sets production photo 32",
-    "title": "Black Sets production photo 32"
+    "alt": "Black Sets behind the scenes photo 32",
+    "title": "Black Sets behind the scenes photo 32"
   },
   {
     "key": "ad5d55bb797e55f4",
     "file": "assets/img/ad5d55bb797e55f4-1576.webp",
     "name": "gallery-bts-33",
-    "alt": "Black Sets production photo 33",
-    "title": "Black Sets production photo 33"
+    "alt": "Black Sets behind the scenes photo 33",
+    "title": "Black Sets behind the scenes photo 33"
   },
   {
     "key": "d7d43535a066fb6f",
     "file": "assets/img/d7d43535a066fb6f-1619.webp",
     "name": "gallery-bts-34",
-    "alt": "Black Sets production photo 34",
-    "title": "Black Sets production photo 34"
+    "alt": "Black Sets behind the scenes photo 34",
+    "title": "Black Sets behind the scenes photo 34"
   },
   {
     "key": "5576d89d46af2cbf",
     "file": "assets/img/5576d89d46af2cbf-1626.webp",
     "name": "hero-bg",
-    "alt": "Black Sets cinematic workshop background",
-    "title": "Black Sets cinematic workshop background"
+    "alt": "Black Sets voodoo shop set with candles and skull",
+    "title": "Black Sets voodoo shop set with candles and skull"
+  },
+  {
+    "key": "e0cd29b9f626c4af",
+    "file": "assets/img/e0cd29b9f626c4af-1617.webp",
+    "name": "hero-slide-2",
+    "alt": "Black Sets set dressing with candles and props",
+    "title": "Black Sets set dressing with candles and props"
+  },
+  {
+    "key": "599b961852e37f92",
+    "file": "assets/img/599b961852e37f92-1920.webp",
+    "name": "hero-slide-3",
+    "alt": "Black Sets candlelit church interior set",
+    "title": "Black Sets candlelit church interior set"
   },
   {
     "key": "8855d054860680ef",
     "file": "assets/img/8855d054860680ef-810.webp",
     "name": "project-97-minutes",
-    "alt": "Key art for 97 Minutes",
-    "title": "Key art for 97 Minutes"
+    "alt": "97 Minutes key art",
+    "title": "97 Minutes key art"
   },
   {
     "key": "50814a072aed3d58",
     "file": "assets/img/50814a072aed3d58-900.webp",
     "name": "project-capelli-code",
-    "alt": "Key art for Capelli Code",
-    "title": "Key art for Capelli Code"
+    "alt": "Capelli Code key art",
+    "title": "Capelli Code key art"
   },
   {
     "key": "e12cad7f042b4229",
     "file": "assets/img/e12cad7f042b4229-720.webp",
     "name": "project-glasshouse",
-    "alt": "Key art for Glasshouse",
-    "title": "Key art for Glasshouse"
+    "alt": "Glasshouse key art",
+    "title": "Glasshouse key art"
   },
   {
     "key": "428dac1d6152f3f5",
     "file": "assets/img/428dac1d6152f3f5-658.webp",
     "name": "project-i-live-here-now",
-    "alt": "Key art for I Live Here Now",
-    "title": "Key art for I Live Here Now"
+    "alt": "I Live Here Now key art",
+    "title": "I Live Here Now key art"
   },
   {
     "key": "44bfdd06c67e5b2c",
     "file": "assets/img/44bfdd06c67e5b2c-900.webp",
     "name": "project-jeepers-creepers-reborn",
-    "alt": "Key art for Jeepers Creepers: Reborn",
-    "title": "Key art for Jeepers Creepers: Reborn"
+    "alt": "Jeepers Creepers: Reborn key art",
+    "title": "Jeepers Creepers: Reborn key art"
   },
   {
     "key": "346f32151e795bd5",
     "file": "assets/img/346f32151e795bd5-900.webp",
     "name": "project-salvage-marines",
-    "alt": "Key art for Salvage Marines",
-    "title": "Key art for Salvage Marines"
+    "alt": "Salvage Marines key art",
+    "title": "Salvage Marines key art"
   },
   {
     "key": "d9cbe051fe86fe80",
     "file": "assets/img/d9cbe051fe86fe80-900.webp",
     "name": "project-the-blue-penny",
-    "alt": "Key art for The Blue Penny",
-    "title": "Key art for The Blue Penny"
+    "alt": "The Blue Penny key art",
+    "title": "The Blue Penny key art"
   },
   {
     "key": "edd5a643a89acf11",
     "file": "assets/img/edd5a643a89acf11-900.webp",
     "name": "project-willy-s-wonderland",
-    "alt": "Key art for Willy's Wonderland",
-    "title": "Key art for Willy's Wonderland"
+    "alt": "Willy's Wonderland key art",
+    "title": "Willy's Wonderland key art"
   },
   {
     "key": "a28cdcef4a72c4ae",
     "file": "assets/img/a28cdcef4a72c4ae-1200.webp",
     "name": "showreel-poster",
-    "alt": "Black Sets Production Showreel Poster",
-    "title": "Black Sets Production Showreel Poster"
+    "alt": "Black Sets video",
+    "title": "Black Sets video"
   },
   {
     "key": "6094d15d281d14e9",
     "file": "assets/img/6094d15d281d14e9-624.webp",
     "name": "voodoo-proposal",
-    "alt": "Jeepers Creepers The Proposal Concept",
-    "title": "Jeepers Creepers The Proposal Concept"
+    "alt": "The Voodoo shop: the proposal",
+    "title": "The Voodoo shop: the proposal"
   },
   {
     "key": "8a6f9c773e4b6aed",
     "file": "assets/img/8a6f9c773e4b6aed-446.webp",
     "name": "voodoo-visualisation",
-    "alt": "Jeepers Creepers The Visualisation 3D Model",
-    "title": "Jeepers Creepers The Visualisation 3D Model"
+    "alt": "The Voodoo shop: the visualisation",
+    "title": "The Voodoo shop: the visualisation"
   }
 ]

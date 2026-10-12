@@ -133,3 +133,75 @@ function bsets_trash_samples() {
     if ( $sample ) { wp_trash_post( $sample[0] ); }
 }
 
+
+/**
+ * Pages created by setup whose design is older than the theme's: [slug => [id, title, state]], state "unchanged"
+ * (nobody edited it since setup) or "edited".
+ */
+function bsets_pages_outdated() {
+    $out = array();
+    foreach ( bsets_pages_data() as $page ) {
+        $id = (int) get_option( 'bsets_page_' . $page['slug'] );
+        if ( ! $id || 'publish' !== get_post_status( $id ) || get_post_meta( $id, '_bsets_seed_version', true ) === bsets_content_version() ) { continue; }
+        $hash = get_post_meta( $id, '_bsets_seed_hash', true );
+        $unchanged = $hash && md5( (string) get_post_field( 'post_content', $id ) ) === $hash;
+        $out[ $page['slug'] ] = array( $id, $page['title'], $unchanged ? 'unchanged' : 'edited' );
+    }
+    return $out;
+}
+
+/** Replace a page's content with the theme's current design (WordPress keeps the previous version as a revision). */
+function bsets_page_refresh( $slug ) {
+    $id = (int) get_option( 'bsets_page_' . $slug );
+    if ( ! $id || ! current_user_can( 'edit_page', $id ) ) { return false; }
+    $result = wp_update_post( wp_slash( array( 'ID' => $id, 'post_content' => bsets_page_markup( $slug ) ) ), true );
+    if ( is_wp_error( $result ) ) { return false; }
+    bsets_mark_seeded( $id );
+    return true;
+}
+
+/** Appearance → Black Sets Pages: update pages to a newer theme design, page by page. */
+add_action( 'admin_menu', function () {
+    add_theme_page( 'Black Sets Pages', 'Black Sets Pages', 'edit_pages', 'bsets-pages', 'bsets_pages_screen' );
+} );
+
+function bsets_pages_screen() {
+    if ( ! current_user_can( 'edit_pages' ) ) { return; }
+    echo '<div class="wrap"><h1>Black Sets Pages</h1>';
+    if ( isset( $_GET['updated'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        echo '<div class="notice notice-success"><p>' . (int) $_GET['updated'] . ' page(s) updated to the new design. The previous version of each is saved under Revisions in the page editor.</p></div>'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    }
+    if ( bsets_media_pending() ) {
+        echo '<p>This theme version has new images. Add them to the Media Library first.</p><p><a class="button button-primary" href="' . esc_url( admin_url( 'themes.php?page=bsets-setup' ) ) . '">Open Black Sets Setup</a></p></div>';
+        return;
+    }
+    $outdated = bsets_pages_outdated();
+    if ( ! $outdated ) { echo '<p>All pages created by the theme are up to date with version ' . esc_html( bsets_content_version() ) . '.</p></div>'; return; }
+    echo '<p>The theme has an updated design for these pages. Pages nobody has edited are ticked. Updating a page you edited replaces your changes (you can restore them from the page\'s Revisions).</p>';
+    echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '"><input type="hidden" name="action" value="bsets_pages_refresh">';
+    wp_nonce_field( 'bsets_pages_refresh' );
+    echo '<table class="widefat striped" style="max-width:720px"><thead><tr><th style="width:40px"></th><th>Page</th><th>Status</th></tr></thead><tbody>';
+    foreach ( $outdated as $slug => $row ) {
+        echo '<tr><td><input type="checkbox" name="pages[]" value="' . esc_attr( $slug ) . '"' . checked( 'unchanged' === $row[2], true, false ) . '></td><td><a href="' . esc_url( get_edit_post_link( $row[0] ) ) . '">' . esc_html( $row[1] ) . '</a></td><td>' . ( 'unchanged' === $row[2] ? 'Not edited since setup' : '<strong>Edited</strong> — your changes would be replaced' ) . '</td></tr>';
+    }
+    echo '</tbody></table><p><button class="button button-primary" type="submit">Update selected pages</button></p></form></div>';
+}
+
+add_action( 'admin_post_bsets_pages_refresh', function () {
+    if ( ! current_user_can( 'edit_pages' ) ) { wp_die( 'Not allowed.' ); }
+    check_admin_referer( 'bsets_pages_refresh' );
+    $slugs = array_map( 'sanitize_key', (array) wp_unslash( $_POST['pages'] ?? array() ) );
+    $outdated = bsets_pages_outdated();
+    $done = 0;
+    foreach ( $slugs as $slug ) {
+        if ( isset( $outdated[ $slug ] ) && bsets_page_refresh( $slug ) ) { ++$done; }
+    }
+    wp_safe_redirect( admin_url( 'themes.php?page=bsets-pages&updated=' . $done ) );
+    exit;
+} );
+
+add_action( 'admin_notices', function () {
+    if ( ! current_user_can( 'edit_pages' ) || ( isset( $_GET['page'] ) && 'bsets-pages' === $_GET['page'] ) ) { return; } // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if ( bsets_pages_pending() || ! bsets_pages_outdated() ) { return; }
+    echo '<div class="notice notice-info"><p><strong>Black Sets:</strong> an updated design is available for your pages. <a class="button" href="' . esc_url( admin_url( 'themes.php?page=bsets-pages' ) ) . '">Review and update pages</a></p></div>';
+} );

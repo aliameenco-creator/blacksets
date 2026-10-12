@@ -27,7 +27,7 @@ function bsets_setup_page_render() {
     <div class="wrap" style="max-width:850px;margin-top:24px">
       <h1>Black Sets Setup &amp; Page Generator</h1>
       <p style="font-size:15px;color:#4b5563">
-        Configure Black Sets in one click: imports all images into the WordPress Media Library, creates all 9 editable block pages under <strong>Pages</strong>, sets up the Primary Menu, and configures the homepage.
+        Configure Black Sets in one click: imports all images into the WordPress Media Library, creates the editable block pages under <strong>Pages</strong>, sets up the Primary Menu, and configures the homepage.
       </p>
 
       <div style="background:#fff;border:1px solid #ccd0d4;padding:24px;border-radius:4px;margin-top:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
@@ -104,7 +104,6 @@ add_action( 'admin_post_bsets_setup', function () {
     }
 
     update_option( 'blogname', 'Black Sets' );
-    update_option( 'blogdescription', 'Film Set Design, Fabrication & 3D Virtual Production' );
 
     // Seed pages and menu
     bsets_pages_seed();

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0
+
+Fixes and design corrections after the first hosted install.
+
+- Logo now visible: a reversed (white) version of the real Black Sets logo is used on the dark header and footer.
+- Phone menu fixed: it opens full screen with every link (before, the header's blur effect trapped the menu inside the header bar).
+- Design closer to the original brand: original button bronze (#64563D), the original's wide-tracked capital headings with an underline bar, white "Explore Black Sets" band, hero slideshow using the archived original slides.
+- Client logos no longer render as grey blocks; project posters fill their frames, and landscape key art is shown whole over a blurred backdrop; grid rows line up.
+- Micro animations: header entrance, hero title lines rising in, scroll reveals with stagger, underline bars drawing in, button light sweep, image hover zoom, staggered phone menu, reading progress bar, gallery lightbox with previous/next. All respect "reduce motion".
+- Copy restored to the original site's wording. Removed text that was not on the original site: invented testimonials (the original only had Wix placeholders), invented FAQ answers, invented Privacy Policy and Terms text (the originals are empty pages), two invented project synopses and extra marketing lines, and invented meta descriptions.
+- Contact form uses the original fields (First Name, Last Name, Email, Message, "Send", "Thanks for submitting!"); mailing list uses "Enter your email here*" / "Subscribe Now".
+- New Appearance > Black Sets Pages screen: updates pages created by setup to the new design, skipping pages you edited unless you tick them (previous versions stay in Revisions).
+
 ## 0.1.0
 
 First release of the Black Sets theme, built from the archived original site (`blacksets.co`).

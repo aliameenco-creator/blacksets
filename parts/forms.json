@@ -3,10 +3,17 @@
     "title": "Contact",
     "fields": [
       {
-        "key": "name",
-        "label": "Name",
+        "key": "first_name",
+        "label": "First Name",
         "type": "text",
-        "required": true,
+        "required": false,
+        "max": 120
+      },
+      {
+        "key": "last_name",
+        "label": "Last Name",
+        "type": "text",
+        "required": false,
         "max": 120
       },
       {
@@ -17,21 +24,29 @@
         "max": 160
       },
       {
-        "key": "subject",
-        "label": "Subject / Production Title",
-        "type": "text",
-        "required": false,
-        "max": 200
-      },
-      {
         "key": "message",
         "label": "Message",
         "type": "textarea",
-        "required": true,
+        "required": false,
         "max": 4000
       }
     ],
-    "submit": "Send Message",
-    "thanks": "Thank you! Your message has been received and our team will get in touch shortly."
+    "submit": "Send",
+    "thanks": "Thanks for submitting!"
+  },
+  "subscribe": {
+    "title": "Mailing list",
+    "fields": [
+      {
+        "key": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true,
+        "max": 160,
+        "placeholder": "Enter your email here*"
+      }
+    ],
+    "submit": "Subscribe Now",
+    "thanks": "Thanks for submitting!"
   }
 }

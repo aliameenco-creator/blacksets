@@ -31,23 +31,23 @@ add_action( 'wp_head', function () {
     $key = bsets_current_seo_key();
     $item = $data[ $key ] ?? array();
     $title = $item['title'] ?? get_bloginfo( 'name' );
-    $desc = $item['desc'] ?? get_bloginfo( 'description' );
+    $desc = (string) ( $item['desc'] ?? '' );
     $url = esc_url( home_url( '/' . ( 'home' === $key ? '' : $key ) ) );
     $image = esc_url( get_theme_file_uri( 'assets/bsets-logo.png' ) );
 
-    echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
+    if ( '' !== $desc ) { echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n"; }
     echo '<link rel="canonical" href="' . $url . '">' . "\n";
     echo '<meta property="og:locale" content="en_GB">' . "\n";
     echo '<meta property="og:type" content="website">' . "\n";
     echo '<meta property="og:title" content="' . esc_attr( $title ) . '">' . "\n";
-    echo '<meta property="og:description" content="' . esc_attr( $desc ) . '">' . "\n";
+    if ( '' !== $desc ) { echo '<meta property="og:description" content="' . esc_attr( $desc ) . '">' . "\n"; }
     echo '<meta property="og:url" content="' . $url . '">' . "\n";
     echo '<meta property="og:site_name" content="Black Sets">' . "\n";
     echo '<meta property="og:image" content="' . $image . '">' . "\n";
     echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
     echo '<meta name="twitter:site" content="@black_sets">' . "\n";
     echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '">' . "\n";
-    echo '<meta name="twitter:description" content="' . esc_attr( $desc ) . '">' . "\n";
+    if ( '' !== $desc ) { echo '<meta name="twitter:description" content="' . esc_attr( $desc ) . '">' . "\n"; }
     echo '<meta name="twitter:image" content="' . $image . '">' . "\n";
 }, 5 );
 

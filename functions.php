@@ -62,18 +62,30 @@ add_action( 'enqueue_block_editor_assets', function () {
     wp_add_inline_style( 'wp-block-library', bsets_font_css() );
 } );
 
+/** Width and height of the reversed (light) logo used on the dark header and footer. */
+function bsets_logo_size() {
+    static $size = null;
+    if ( null === $size ) {
+        $info = @getimagesize( get_theme_file_path( 'assets/bsets-logo-light.png' ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+        $size = $info ? array( (int) $info[0], (int) $info[1] ) : array( 480, 405 );
+    }
+    return $size;
+}
+
 /** Shortcode: latest posts grid */
 add_shortcode( 'bsets_latest_posts', function () {
     $posts = get_posts( array( 'numberposts' => 4, 'post_status' => 'publish' ) );
-    if ( ! $posts ) { return ''; }
+    if ( ! $posts ) { // The original site's empty-feed wording.
+        return '<div class="bsets-empty-notice"><h3>Check back soon</h3><p>Once posts are published, you’ll see them here.</p></div>';
+    }
     $out = '<div class="bsets-latest-posts"><div class="bsets-post-grid">';
     foreach ( $posts as $p ) {
-        $thumb = get_the_post_thumbnail_url( $p, 'medium_large' ) ?: get_theme_file_uri( 'assets/img/' . reset( bsets_media_ids() ) . '.webp' );
+        $thumb = get_the_post_thumbnail_url( $p, 'medium_large' );
         $link = get_permalink( $p );
         $date = get_the_date( 'F j, Y', $p );
         $out .= '<article class="bsets-post-card">';
         if ( $thumb ) { $out .= '<a href="' . esc_url( $link ) . '" class="bsets-post-thumb"><img src="' . esc_url( $thumb ) . '" alt="" loading="lazy"/></a>'; }
-        $out .= '<div class="bsets-post-body"><span class="eyebrow">' . esc_html( $date ) . '</span><h3><a href="' . esc_url( $link ) . '">' . esc_html( get_the_title( $p ) ) . '</a></h3><p>' . esc_html( wp_trim_words( get_the_excerpt( $p ), 20 ) ) . '</p><a href="' . esc_url( $link ) . '" class="bsets-readmore">Read article →</a></div>';
+        $out .= '<div class="bsets-post-body"><span class="eyebrow">' . esc_html( $date ) . '</span><h3><a href="' . esc_url( $link ) . '">' . esc_html( get_the_title( $p ) ) . '</a></h3><p>' . esc_html( wp_trim_words( get_the_excerpt( $p ), 20 ) ) . '</p><a href="' . esc_url( $link ) . '" class="bsets-readmore">Read More</a></div>';
         $out .= '</article>';
     }
     $out .= '</div></div>';
