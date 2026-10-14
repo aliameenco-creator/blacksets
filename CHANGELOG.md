@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Fixed one-click theme updates. Before, "Update now" failed with "PCLZIP_ERR_BAD_FORMAT ... Unable to find End of Central Dir Record signature" because the updater downloaded GitHub's description of the file instead of the ZIP. The theme now downloads the real ZIP, checks its size and SHA-256 checksum and validates its contents before installing. Sites on 0.2.0 or 0.2.1 must upload this version manually once; later updates work from Appearance > Themes.
+- Includes the 0.2.1 layout fixes.
+
 ## 0.2.1
 
 Phone and card layout fixes (theme styles only; pages do not need updating).

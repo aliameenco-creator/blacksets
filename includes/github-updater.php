@@ -70,3 +70,55 @@ function bsets_release_updates( $transient ) {
 }
 add_filter( 'site_transient_update_themes', 'bsets_release_updates' );
 
+// GitHub's asset API returns JSON unless asked for octet-stream, so the theme downloads, verifies and validates the ZIP itself.
+add_filter( 'auto_update_theme', function ( $update, $item ) { return 'black-sets' === ( $item->theme ?? '' ) ? false : $update; }, 10, 2 );
+
+function bsets_release_zip_validate( $file, $version ) {
+    if ( ! class_exists( 'ZipArchive' ) ) { return new WP_Error( 'zip', 'The server needs the PHP ZIP extension to verify this update.' ); }
+    $zip = new ZipArchive();
+    if ( true !== $zip->open( $file ) ) { return new WP_Error( 'zip', 'The downloaded package is not a valid ZIP.' ); }
+    $error = null; $total = 0;
+    if ( $zip->numFiles > 3000 ) { $error = 'Too many files in the theme ZIP.'; }
+    for ( $i = 0; ! $error && $i < $zip->numFiles; ++$i ) {
+        $entry = $zip->statIndex( $i ); $name = $entry['name']; $total += $entry['size'];
+        if ( ! str_starts_with( $name, 'black-sets/' ) || str_contains( $name, '\\' ) || preg_match( '~(^|/)(\.{1,2}|\.[^/]+)(/|$)~', $name ) || $total > 200000000 ) { $error = 'The theme ZIP contains an unsafe path or exceeds the expanded size limit.'; break; }
+        $opsys = 0; $attributes = 0;
+        if ( $zip->getExternalAttributesIndex( $i, $opsys, $attributes ) && 0120000 === ( ( $attributes >> 16 ) & 0170000 ) ) { $error = 'Symbolic links are not allowed in update packages.'; }
+    }
+    $style = $zip->getFromName( 'black-sets/style.css' );
+    if ( ! $error && ( ! is_string( $style ) || ! preg_match( '/^Version:\s*' . preg_quote( $version, '/' ) . '\s*$/m', $style ) || false === $zip->locateName( 'black-sets/functions.php' ) || false === $zip->locateName( 'black-sets/theme.json' ) ) ) { $error = 'The package version or required theme files do not match the release.'; }
+    if ( ! $error ) {
+        $headers = bsets_style_requirements( $style );
+        if ( version_compare( get_bloginfo( 'version' ), $headers['wp'], '<' ) || version_compare( PHP_VERSION, $headers['php'], '<' ) ) { $error = 'Update WordPress/PHP to the versions required by this theme first.'; }
+    }
+    $zip->close(); return $error ? new WP_Error( 'package', $error ) : true;
+}
+function bsets_style_requirements( $style ) {
+    preg_match( '/^Requires at least:\s*([\d.]+)/m', $style, $wp ); preg_match( '/^Requires PHP:\s*([\d.]+)/m', $style, $php );
+    return array( 'wp' => $wp[1] ?? '6.6', 'php' => $php[1] ?? '8.1' );
+}
+function bsets_release_download( $reply, $package, $upgrader, $hook_extra = array() ) {
+    if ( ! str_starts_with( (string) $package, bsets_update_api() . '/releases/assets/' ) ) { return $reply; }
+    $release = bsets_release_check();
+    if ( is_wp_error( $release ) || $package !== $release['package'] ) { return new WP_Error( 'package', 'The requested update does not match the checked release.' ); }
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    $file = wp_tempnam( 'black-sets.zip' );
+    if ( ! $file ) { return new WP_Error( 'file', 'Cannot create the update temporary file.' ); }
+    $headers = bsets_update_headers(); $headers['Accept'] = 'application/octet-stream';
+    $args = array( 'headers' => $headers, 'timeout' => 120, 'redirection' => 0, 'stream' => true, 'filename' => $file, 'limit_response_size' => 80000001 );
+    $response = wp_safe_remote_get( $package, $args );
+    if ( ! is_wp_error( $response ) && in_array( wp_remote_retrieve_response_code( $response ), array( 301, 302, 303, 307, 308 ), true ) ) {
+        $url = wp_remote_retrieve_header( $response, 'location' );
+        $host = wp_parse_url( $url, PHP_URL_HOST );
+        if ( 'https' !== wp_parse_url( $url, PHP_URL_SCHEME ) || ! in_array( $host, array( 'release-assets.githubusercontent.com', 'objects.githubusercontent.com' ), true ) || wp_parse_url( $url, PHP_URL_USER ) || wp_parse_url( $url, PHP_URL_PASS ) ) { wp_delete_file( $file ); return new WP_Error( 'redirect', 'GitHub returned an unexpected download host.' ); }
+        // Never forward the API credential to a download host or its redirects.
+        $args['headers'] = array( 'User-Agent' => 'Black-Sets-WordPress-Updater' ); $args['redirection'] = 3;
+        $response = wp_safe_remote_get( $url, $args );
+    }
+    if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) || filesize( $file ) !== $release['size'] || ! hash_equals( $release['sha256'], hash_file( 'sha256', $file ) ) ) { wp_delete_file( $file ); return new WP_Error( 'download', 'The update download failed size or SHA-256 verification. No theme files were installed.' ); }
+    $valid = bsets_release_zip_validate( $file, $release['version'] );
+    if ( is_wp_error( $valid ) ) { wp_delete_file( $file ); return $valid; }
+    return $file;
+}
+add_filter( 'upgrader_pre_download', 'bsets_release_download', 10, 4 );
+add_action( 'upgrader_process_complete', function ( $upgrader, $options ) { if ( 'theme' === ( $options['type'] ?? '' ) ) { delete_site_transient( 'bsets_github_release' ); } }, 10, 2 );
