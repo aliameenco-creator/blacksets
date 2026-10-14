@@ -627,7 +627,23 @@ body:not(.has-hero) .site-header::before,
 }
 .bsets-card p {
   color: #d1d1d1;
+}
+/* Only the description grows, so the number and heading line up across cards of different text length. */
+.bsets-card p:not(.bsets-num) {
   flex-grow: 1;
+}
+/* Card spacing comes from the rules here, not WordPress's block-gap margins. */
+.bsets-card > * {
+  margin-top: 0 !important;
+}
+.bsets-card > p:not(.bsets-num) {
+  margin-bottom: 22px;
+  /* Same short excerpt on every card; the full text is on the linked page. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 /* Latest posts / empty feed */
@@ -1526,11 +1542,17 @@ body:not(.has-hero) .site-header::before,
   .bsets-card h3 {
     font-size: 13px;
     letter-spacing: 0.12em;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .bsets-card p {
     font-size: 12.5px;
     line-height: 1.55;
+  }
+  .bsets-card .bsets-num {
+    margin-bottom: 6px;
+  }
+  .bsets-card > p:not(.bsets-num) {
+    margin-bottom: 14px;
   }
   .bsets-card .wp-block-button__link {
     padding: 11px 10px;
@@ -1574,15 +1596,18 @@ body:not(.has-hero) .site-header::before,
     padding: 12px;
   }
 
+  /* Flex (not grid) so a short last row is centred. */
   .bsets-logos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 18px 12px;
-    justify-items: center;
   }
   .bsets-logos .bsets-logo {
+    flex: 0 0 calc((100% - 24px) / 3);
     min-width: 0;
-    max-width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .bsets-logos .bsets-logo img {
     height: auto !important;
@@ -1613,16 +1638,50 @@ body:not(.has-hero) .site-header::before,
     padding: 20px 16px;
   }
 
+  /* Phone footer: one centred column. */
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 20px;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    text-align: center;
   }
-  .footer-contact,
-  .footer-subscribe {
-    grid-column: 1 / -1;
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .footer-logo {
     height: 60px;
+    margin-bottom: 18px;
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 22px;
+  }
+  .footer-links li {
+    margin: 0;
+  }
+  .footer-links a:hover {
+    transform: none;
+  }
+  .footer-subscribe .bsets-subscribe-form {
+    padding: 0;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+  .bsets-subscribe-form .bsets-sub-wrap {
+    flex-direction: column;
+  }
+  .bsets-subscribe-form input,
+  .bsets-subscribe-form button {
+    width: 100%;
+  }
+  .bsets-subscribe-form button {
+    justify-content: center;
   }
   .footer-bottom-inner {
     flex-direction: column;

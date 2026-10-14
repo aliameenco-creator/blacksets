@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1
+
+Phone and card layout fixes (theme styles only; pages do not need updating).
+
+- Explore Black Sets cards: the number, heading and text now line up across both cards (before, the shorter 3D Scans card pushed its heading lower). Spacing inside the cards is tighter, and each card shows a 3-line excerpt ending in "…" so both cards are the same height on phones; the full text is on the Gallery and 3D Scans pages.
+- Our Happy Clients: on phones the last row of logos is centred.
+- Footer on phones: one centred column (logo, social icons, menu links, contact details, mailing list); the mailing-list box and Subscribe button are full width so the placeholder is no longer cut off.
+
 ## 0.2.0
 
 Fixes and design corrections after the first hosted install.
